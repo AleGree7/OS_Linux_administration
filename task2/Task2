@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#backup of home directory
+
+sudo tar cpf /tmp/full-backup "HOME-created on `date '+%dD-%B-%Y'`.tar" /home
+sudo tar cpNf /tmp/full-backup "HOME-created on `date '+%dD-%B-%Y'`.tar" /home
+
+#backup of ssh config files
+
+sudo tar cpf /tmp/full-backup "SSH-created on `date '+%dD-%B-%Y'`.tar" /etc/ssh/ssh_config
+sudo tar cpNf /tmp/full-backup "SSH-created on `date '+%dD-%B-%Y'`.tar" /etc/ssh/ssh_config
+
+#backup of ftp config files
+
+sudo tar cpf /tmp/full-backup "FTP-created on `date '+%dD-%B-%Y'`.tar" /etc/vsftpd.conf
+sudo tar cpNf /tmp/full-backup "FTP-created on `date '+%dD-%B-%Y'`.tar" /etc/vsftpd.conf
+
+#backup of rdp config files
+
+sudo tar cpf /tmp/full-backup "RDP-created on `date '+%dD-%B-%Y'`.tar" /etc/xrdp
+sudo tar cpNf /tmp/full-backup "RDP-created on `date '+%dD-%B-%Y'`.tar" /etc/xrdp
+
+#backup of /var/log
+
+sudo tar cpf /tmp/full-backup "VAR-created on `date '+%dD-%B-%Y'`.tar" /var/log
+sudo tar cpNf /tmp/full-backup "VAR-created on `date '+%dD-%B-%Y'`.tar" /var/log
+
+#moving backup files to archive directory
+
+sudo cp ./*.tar /home/aleksandra/archive
